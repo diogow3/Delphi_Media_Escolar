@@ -20,7 +20,7 @@ type
     procedure btnCalcularClick(Sender: TObject);
   private
     { Private declarations }
-    procedure VerificarIntervalo(nota: double);
+    function VerificarIntervalo(nota: double): boolean;
     function CalcularMedia(num1, num2, num3: double): double;
     function CalcularAprovacao(num: double): string;
   public
@@ -60,9 +60,13 @@ begin
     exit;
   end;
 
-  VerificarIntervalo(nota1);
-  VerificarIntervalo(nota2);
-  VerificarIntervalo(nota3);
+  if  VerificarIntervalo(nota1) or
+      VerificarIntervalo(nota2) or
+      VerificarIntervalo(nota3) then
+  begin
+    ShowMessage('A nota deve ser entre 0 e 10');
+    exit;
+  end;
 
   media := CalcularMedia(nota1, nota2, nota3);
   lblMedia.Caption := FloatToStr(media);
@@ -88,12 +92,12 @@ begin
   Result := RoundTo(n, -2);
 end;
 
-procedure TfrmPrincipal.VerificarIntervalo(nota: double);
+function TfrmPrincipal.VerificarIntervalo(nota: double): boolean;
 begin
   if (nota < 0) or (nota > 10) then
-  begin
-      ShowMessage('A nota deve ser entre 0 e 10');
-  end;
+    Result := True
+  else
+    Result := False;
 end;
 
 end.
