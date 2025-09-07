@@ -42,6 +42,15 @@ var
   media: double;
 
 begin
+  if  (edtNota1.Text = '') or
+      (edtNota2.Text = '') or
+      (edtNota3.Text = '') then
+  begin
+    ShowMessage('Campos não podem ser vazios');
+    exit;
+  end;
+
+
   if  TryStrToFloat(edtNota1.Text, nota1) and
       TryStrToFloat(edtNota2.Text, nota2) and
       TryStrToFloat(edtNota3.Text, nota3) then

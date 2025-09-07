@@ -82,7 +82,6 @@ object frmPrincipal: TfrmPrincipal
     Width = 121
     Height = 23
     TabOrder = 0
-    Text = '0'
   end
   object edtNota2: TEdit
     Left = 48
@@ -90,7 +89,6 @@ object frmPrincipal: TfrmPrincipal
     Width = 121
     Height = 23
     TabOrder = 1
-    Text = '0'
   end
   object edtNota3: TEdit
     Left = 48
@@ -98,7 +96,6 @@ object frmPrincipal: TfrmPrincipal
     Width = 121
     Height = 23
     TabOrder = 2
-    Text = '0'
   end
   object btnCalcular: TButton
     Left = 48
