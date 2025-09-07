@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Math;
 
 type
   TfrmPrincipal = class(TForm)
@@ -56,7 +56,7 @@ begin
   VerificarIntervalo(nota3);
 
   media := CalcularMedia(nota1, nota2, nota3);
-  lblMedia.Caption := Format('%.1f', [media]);
+  lblMedia.Caption := FloatToStr(media);
 
   lblAprocavao.Caption := CalcularAprovacao(media);
 
@@ -73,8 +73,10 @@ begin
 end;
 
 function TfrmPrincipal.CalcularMedia(num1, num2, num3: double): double;
+var n: double;
 begin
-  Result := (num1 + num2 + num3) / 3;
+  n := (num1 + num2 + num3) / 3;
+  Result := RoundTo(n, -2);
 end;
 
 procedure TfrmPrincipal.VerificarIntervalo(nota: double);

@@ -14,9 +14,9 @@ object frmPrincipal: TfrmPrincipal
   object lblMedia: TLabel
     Left = 48
     Top = 352
-    Width = 10
+    Width = 53
     Height = 25
-    Caption = '0'
+    Caption = 'M'#233'dia'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
